@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, Link } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -39,7 +38,7 @@ const Hero = () => {
           </Button>
           <Button variant="ghost" size="icon" asChild>
             <a href="https://kaggle.com/michaelharoon" target="_blank" rel="noopener noreferrer" aria-label="Kaggle">
-              <Link className="h-6 w-6" />
+              <span className="font-bold text-sm">Kaggle</span>
             </a>
           </Button>
         </div>
@@ -49,4 +48,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
