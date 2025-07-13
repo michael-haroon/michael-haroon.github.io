@@ -68,7 +68,7 @@ const About = () => {
               <div>
                 <h3 className="font-semibold mb-2">Areas of Interest</h3>
                 <div className="flex flex-wrap gap-2">
-                  Lately, I have been exploring open-source. I've helped flag issues that should be closed.
+                  Lately, I have been exploring ML infra open-source. I've helped flag issues that should be closed.
                 </div>
               </div>
               
