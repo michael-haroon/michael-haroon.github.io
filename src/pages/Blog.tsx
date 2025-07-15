@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import fm from 'front-matter';
-import ReactMarkdown from 'react-markdown';
 
 const TABS = [
   { label: 'Career', value: 'career' },
-  { label: 'General/Personal', value: 'general' },
+  { label: 'Hobbies', value: 'hobbies' },
+  { label: 'Movements', value: 'movements' },
 ];
 
 const Blog = () => {
@@ -109,7 +109,7 @@ const Blog = () => {
                         {post.title}
                       </CardTitle>
                       <CardDescription className="line-clamp-3">
-                        {post.excerpt}
+                        {post.excerpt || post.description}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="pt-0">
