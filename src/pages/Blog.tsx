@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import fm from 'front-matter';
+import { Link } from 'react-router-dom';
 
 const TABS = [
   { label: 'Career', value: 'career' },
@@ -19,7 +20,7 @@ const Blog = () => {
 
   useEffect(() => {
     // Dynamically import all markdown files in src/posts
-    const postFiles = import.meta.glob('../posts/*.md', { eager: true, as: 'raw' });
+    const postFiles = import.meta.glob('../posts/*.md', { eager: true, query: '?raw', import: 'default' });
     const loadedPosts: any[] = Object.entries(postFiles).map(([filePath, fileContent]) => {
       const parsed = fm(fileContent as string);
       const data = parsed.attributes as any;
@@ -118,9 +119,11 @@ const Blog = () => {
                           <Clock className="h-3 w-3" />
                           {post.readTime}
                         </div>
-                        <Button variant="ghost" size="sm" className="group-hover:text-primary">
-                          Read More
-                          <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                        <Button variant="ghost" size="sm" className="group-hover:text-primary" asChild>
+                          <Link to={`/blog/${post.slug}`}>
+                            Read More
+                            <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                          </Link>
                         </Button>
                       </div>
                       <div className="flex flex-wrap gap-1 mt-3">

@@ -4,23 +4,27 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Globe } from 'lucide-react';
-
-// Mock portfolio data - in a real app, this would come from a CMS or API
-const projects = [
-  {
-    id: 1,
-    title: "AI Insurance",
-    description: "File parser for insurance claims.",
-    category: "Full-Stack",
-    technologies: ["Next.js", "LLM", "TypeScript"],
-    image: "",
-    githubUrl: "https://github.com/michael-haroon/ai-insurance",
-    liveUrl: "",
-    featured: true
-  },
-];
+import { Link } from 'react-router-dom';
+import fm from 'front-matter';
+import { useEffect, useState } from 'react';
 
 const Portfolio = () => {
+  const [projects, setProjects] = useState<any[]>([]);
+
+  useEffect(() => {
+    // @ts-ignore
+    const files = import.meta.glob('../projects/*.md', { as: 'raw', eager: true });
+    const loadedProjects = Object.entries(files).map(([path, content]: [string, string]) => {
+      const { attributes, body } = fm<Record<string, any>>(content as string);
+      return {
+        ...(attributes || {}),
+        body,
+        slug: path.split('/').pop()?.replace('.md', ''),
+      };
+    });
+    setProjects(loadedProjects);
+  }, []);
+
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
 
@@ -44,13 +48,15 @@ const Portfolio = () => {
           <h2 className="text-2xl font-semibold mb-8">Featured Projects</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {featuredProjects.map((project) => (
-              <Card key={project.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <Card key={project.slug} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  {project.image && (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  )}
                 </div>
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
@@ -64,7 +70,7 @@ const Portfolio = () => {
                     )}
                   </div>
                   <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                    {project.title}
+                    <Link to={`/portfolio/${project.slug}`}>{project.title}</Link>
                   </CardTitle>
                   <CardDescription className="text-base">
                     {project.description}
@@ -72,19 +78,21 @@ const Portfolio = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
+                    {project.technologies?.map((tech: string) => (
                       <Badge key={tech} variant="outline" className="text-xs">
                         {tech}
                       </Badge>
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
+                    {project.githubUrl && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
                     {project.liveUrl && (
                       <Button variant="outline" size="sm" asChild>
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -103,20 +111,22 @@ const Portfolio = () => {
           <h2 className="text-2xl font-semibold mb-8">Other Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherProjects.map((project) => (
-              <Card key={project.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <Card key={project.slug} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  {project.image && (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  )}
                 </div>
                 <CardHeader className="pb-4">
                   <Badge variant="secondary" className="w-fit mb-2">
                     {project.category}
                   </Badge>
                   <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                    {project.title}
+                    <Link to={`/portfolio/${project.slug}`}>{project.title}</Link>
                   </CardTitle>
                   <CardDescription className="line-clamp-3">
                     {project.description}
@@ -124,24 +134,26 @@ const Portfolio = () => {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="flex flex-wrap gap-1 mb-4">
-                    {project.technologies.slice(0, 3).map((tech) => (
+                    {project.technologies?.slice(0, 3).map((tech: string) => (
                       <Badge key={tech} variant="outline" className="text-xs">
                         {tech}
                       </Badge>
                     ))}
-                    {project.technologies.length > 3 && (
+                    {project.technologies?.length > 3 && (
                       <Badge variant="outline" className="text-xs">
                         +{project.technologies.length - 3} more
                       </Badge>
                     )}
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="ghost" size="sm" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
+                    {project.githubUrl && (
+                      <Button variant="ghost" size="sm" asChild>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
                     {project.liveUrl && (
                       <Button variant="ghost" size="sm" asChild>
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
