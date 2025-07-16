@@ -1,6 +1,6 @@
 ---
 title: "For profit?"
-excerpt: "test"
+excerpt: "Increased prices and profits, decreased quality of life and buying power of the average joe."
 author: "Michael Haroon"
 date: "2025-07-15"
 readTime: "11 min read"
