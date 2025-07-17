@@ -13,7 +13,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     // @ts-ignore
-    const files = import.meta.glob('../projects/*.md', { as: 'raw', eager: true });
+    const files = import.meta.glob('../projects/*.md', { query: '?raw', import: 'default', eager: true });
     const loadedProjects = Object.entries(files).map(([path, content]: [string, string]) => {
       const { attributes, body } = fm<Record<string, any>>(content as string);
       return {
