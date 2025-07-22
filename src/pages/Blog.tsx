@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const TABS = [
   { label: 'Career', value: 'career' },
-  { label: 'Hobbies', value: 'hobbies' },
+  // { label: 'Hobbies', value: 'hobbies' }, TODO: uncomment when adding first hobby post
   { label: 'Movements', value: 'movements' },
 ];
 
