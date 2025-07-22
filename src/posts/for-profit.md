@@ -6,8 +6,6 @@ date: "2025-07-15"
 readTime: "11 min read"
 category: "movements"
 tags:
-  - Growing wealth disparity
-  - Greed
 image: "https://i.ytimg.com/vi/PymMikfkiLk/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLBmDPTmib4UHJVHIdX_B2GloMuhjQ"
 ---
 
