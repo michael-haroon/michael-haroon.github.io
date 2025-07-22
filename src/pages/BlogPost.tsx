@@ -11,7 +11,7 @@ import rehypeRaw from 'rehype-raw';
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
