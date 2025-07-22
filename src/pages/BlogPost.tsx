@@ -11,7 +11,7 @@ import rehypeRaw from 'rehype-raw';
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const [post, setPost] = useState<any>(null);
+  const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const BlogPost = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
-        <section className="container mx-auto px-4 py-16 max-w-2xl">
+        <section className="container mx-auto px-4 py-16 max-w-2xl break-words whitespace-normal">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2 mb-2">
