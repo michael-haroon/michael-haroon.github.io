@@ -47,7 +47,7 @@ const Blog = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold tracking-tight mb-4">Blog</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Thoughts, insights, and lessons learned from my journey in software development and technology.
+              Thoughts, insights, and lessons learned from my journey.
             </p>
           </div>
         </section>
