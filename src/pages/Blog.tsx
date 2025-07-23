@@ -127,11 +127,17 @@ const Blog = () => {
                         </Button>
                       </div>
                       <div className="flex flex-wrap gap-1 mt-3">
-                        {post.tags && post.tags.slice(0, 2).map((tag) => (
-                          <Badge key={tag} variant="outline" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
+                        {post.tags && (Array.isArray(post.tags) ? post.tags : [post.tags])
+                          .slice(0, 2)
+                          .map((tag) => (
+                            <Badge 
+                              key={tag} 
+                              variant={tag === 'About Me' ? 'default' : 'outline'} 
+                              className={`text-xs ${tag === 'About Me' ? 'bg-purple-600 hover:bg-purple-700 text-white' : ''}`}
+                            >
+                              {tag}
+                            </Badge>
+                          ))}
                       </div>
                       {/* Optionally render a preview of the markdown content */}
                       {/* <div className="mt-2 text-sm text-muted-foreground line-clamp-2">
