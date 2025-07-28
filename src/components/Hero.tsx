@@ -10,7 +10,7 @@ const Hero = () => {
           Hello, I'm <span className="text-primary">Michael Haroon</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
-           This is where I share what I find interesting. It's new, so I'm still adding content.
+           This is where I share what I find interesting.
         </p>
         <div className="flex gap-4 justify-center animate-fade-in">
           <Button asChild>
