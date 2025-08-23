@@ -44,7 +44,7 @@ const About = () => {
                   </div>
                   <Badge variant="secondary">2024</Badge>
                 </div>
-                <p className="text-sm text-muted-foreground">My biggest interests are optimization and ML Infra. I was a research assistant, lab mentor, and IT tech.</p>
+                <p className="text-sm text-muted-foreground">My interests include machine learning infra, optimization, and safety. I was a research assistant, lab mentor, and IT tech.</p>
 
               </div>
               
