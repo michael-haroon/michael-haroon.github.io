@@ -2,7 +2,7 @@
 title: "My first successful hedge"
 excerpt: "Today, Oct 10, 2025, marks the day I established and gained from a successful hedge in the equity options!"
 author: "Michael Haroon"
-date: "2025-07-23"
+date: "2025-10-10"
 readTime: "__ min read"
 category: "career"
 tags: ""
