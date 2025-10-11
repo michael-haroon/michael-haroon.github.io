@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import fm from 'front-matter';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -53,10 +53,6 @@ const BlogPost = () => {
                 <div className="flex items-center gap-1 text-xs text-muted-foreground">
                   <Calendar className="h-3 w-3" />
                   {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-                </div>
-                <div className="flex items-center gap-1 text-xs text-muted-foreground ml-auto">
-                  <Clock className="h-3 w-3" />
-                  {post.readTime}
                 </div>
               </div>
               <CardTitle className="text-2xl mb-2">{post.title}</CardTitle>

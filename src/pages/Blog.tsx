@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import fm from 'front-matter';
 import { Link } from 'react-router-dom';
@@ -114,11 +114,7 @@ const Blog = () => {
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="pt-0">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                          <Clock className="h-3 w-3" />
-                          {post.readTime}
-                        </div>
+                      <div className="flex items-center justify-end">
                         <Button variant="ghost" size="sm" className="group-hover:text-primary" asChild>
                           <Link to={`/blog/${post.slug}`}>
                             Read More
