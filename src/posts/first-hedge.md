@@ -1,5 +1,5 @@
 ---
-title: "My first hedge"
+title: "My first directional hedge"
 excerpt: "Today, Oct 10, 2025, marks the day I established and gained from a successful hedge in the equity options!"
 author: "Michael Haroon"
 date: "2025-10-10"
