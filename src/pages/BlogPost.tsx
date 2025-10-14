@@ -52,7 +52,11 @@ const BlogPost = () => {
                 <Badge variant="secondary" className="text-xs">{post.category}</Badge>
                 <div className="flex items-center gap-1 text-xs text-muted-foreground">
                   <Calendar className="h-3 w-3" />
-                  {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  {(() => {
+                    const [year, month, day] = post.date.split('-');
+                    const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+                    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+                  })()}
                 </div>
               </div>
               <CardTitle className="text-2xl mb-2">{post.title}</CardTitle>

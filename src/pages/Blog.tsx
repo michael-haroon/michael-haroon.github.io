@@ -31,7 +31,13 @@ const Blog = () => {
       };
     });
     // Sort by date descending
-    loadedPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    loadedPosts.sort((a, b) => {
+      const parseDate = (dateStr: string) => {
+        const [year, month, day] = dateStr.split('-');
+        return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+      };
+      return parseDate(b.date).getTime() - parseDate(a.date).getTime();
+    });
     setPosts(loadedPosts);
     setLoading(false);
   }, []);
@@ -99,11 +105,15 @@ const Blog = () => {
                         </Badge>
                         <div className="flex items-center gap-1 text-xs text-muted-foreground">
                           <Calendar className="h-3 w-3" />
-                          {new Date(post.date).toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'short', 
-                            day: 'numeric' 
-                          })}
+                          {(() => {
+                            const [year, month, day] = post.date.split('-');
+                            const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+                            return date.toLocaleDateString('en-US', { 
+                              year: 'numeric', 
+                              month: 'short', 
+                              day: 'numeric' 
+                            });
+                          })()}
                         </div>
                       </div>
                       <CardTitle className="text-lg line-clamp-2 group-hover:text-primary transition-colors">

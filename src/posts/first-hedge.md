@@ -2,7 +2,7 @@
 title: "My first \"directional hedge\""
 excerpt: "Lessons learned on questionable options positions."
 author: "Michael Haroon"
-date: "2025-10-10"
+date: "2025-10-13"
 category: "career"
 tags: ""
 image: "https://wumbo.net/symbols/capital-delta/feature.png"
