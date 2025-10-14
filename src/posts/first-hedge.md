@@ -36,5 +36,10 @@ Here are a few things I learned in no particular order:
 
 &nbsp;
 
+||| - Lastly, practice with a paper account. Duh.
+
+&nbsp;
+
+
 
 Now I wonder, when are options best used? If I post again soon, it will be about options and their greeks. I hypothesize that options are best for when you expect a price change in the underlying AND no one else does.
