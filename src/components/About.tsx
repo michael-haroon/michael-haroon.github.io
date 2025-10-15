@@ -44,7 +44,9 @@ const About = () => {
                   </div>
                   <Badge variant="secondary">2024</Badge>
                 </div>
-                <p className="text-sm text-muted-foreground">My interests include machine learning infra, optimization, and safety. I was a research assistant, lab mentor, and IT tech.</p>
+                <p className="text-sm text-muted-foreground">My background focused on the core of algebra, analysis,
+                  statistics, probability, and nonlinear optimization, and discrete optimization. I did terrible.
+                  I was a also a research assistant, lab mentor, and IT technician.</p>
 
               </div>
               
@@ -57,8 +59,9 @@ const About = () => {
                   <Badge variant="outline">2022</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground">
+                  I was a declared physics major despite never having taken a physics course. Most of my courses were humanities.
                   I was a tutor and student rep on a hiring committee. I was recognized as one of the best math students for the year 2020-2021, 
-                  and I was commended for my skills, contributions, and performance
+                  and I was commended for my skills, contributions, and performance.
                 </p>
               </div>
             </CardContent>
@@ -82,14 +85,18 @@ const About = () => {
               <div>
                 <h3 className="font-semibold mb-2">Areas of Interest</h3>
                 <div className="flex flex-wrap gap-2">
-                  Lately, I have been exploring ML infra open-source. I've helped flag issues that should be closed.
+                  I was contributing to TransformerLab up until I got an interview with Amazon.
+                  Since then, I've shifted my focus to the financial markets and poker. My plan forward is to
+                  continue learning about options, explore new opportunities, and test hypotheses. 
+                  I will also use my unemployed time and $25,000 AWS credits to apply ML to trading or a product/service
+                  of substance to others.
                 </div>
               </div>
               
               <div>
                 <h3 className="font-semibold mb-2">Personal Interests</h3>
                 <div className="flex flex-wrap gap-2">
-                  <p>I am an avid gym goer and Olympic lifting newbie. I love games and fair competition.</p>
+                  <p>I have a dog that I dearly love. I am an avid gym goer and Olympic lifting hobbyist. And I love games.</p>
                   <p>I also follow news on wealth inequality and economics.</p>
                 </div>
               </div>
