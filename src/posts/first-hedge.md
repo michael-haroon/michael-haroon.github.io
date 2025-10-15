@@ -1,6 +1,6 @@
 ---
 title: "My first \"directional hedge\""
-excerpt: "Lessons learned on questionable options positions."
+excerpt: "Lessons learned from questionable options positions."
 author: "Michael Haroon"
 date: "2025-10-13"
 category: "career"
