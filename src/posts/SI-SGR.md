@@ -7,7 +7,7 @@ category: "trading"
 tags: ""
 image: "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2199670255.jpg?c=original"
 ---
-Today I learned a lot. One is that India consumes an insane amount of silver for noonindustrial uses and ran London dry for it. Another thing is the relationship between silver futures (SI) and silver-to-gold ratio (SGR).
+Today I learned a lot. One is that India consumes an insane amount of silver for noonindustrial uses and ran London dry for it. <s>Another thing is the relationship between silver futures (SI) and silver-to-gold ratio (SGR).
 
 &nbsp;
 
@@ -42,3 +42,9 @@ Here is my source code with more details of the analysis: [https://github.com/mi
 &nbsp;
 
 Here is the article of the claim: [https://investorplace.com/smartmoney/2025/10/the-great-silver-shortage-why-prices-are-poised-to-break-out-again/](https://investorplace.com/smartmoney/2025/10/the-great-silver-shortage-why-prices-are-poised-to-break-out-again/)
+
+&nbsp;
+
+---</s>
+
+EDIT: I  realized assumptions for the model were violated. The underlying data are time series. OLS assumes independent residuals (no autocorrelation). Times series are autocorrelated by definition. Gotta start over!
