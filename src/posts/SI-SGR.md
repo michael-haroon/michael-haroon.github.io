@@ -25,7 +25,7 @@ $$
 
 The model is as follows.
 
-![Screenshot of the model](futures.png)
+![Screenshot of the model](/futures.png)
 
 &nbsp;
 
