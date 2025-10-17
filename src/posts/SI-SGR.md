@@ -1,8 +1,8 @@
 ---
-title: "Future price of silver and silver-gold ratio"
-excerpt: "."
+title: "Analysis of future and spot prices of silver related to silver-gold ratio"
+excerpt: "There is no strong relation."
 author: "Michael Haroon"
-date: "2025-10-15"
+date: "2025-10-16"
 category: "trading"
 tags: ""
 image: "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2199670255.jpg?c=original"
