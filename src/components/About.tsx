@@ -85,11 +85,11 @@ const About = () => {
               <div>
                 <h3 className="font-semibold mb-2">Areas of Interest</h3>
                 <div className="flex flex-wrap gap-2">
+                  I am most interested in entrepernurship and trading. I was at Y Combinator's AI Start School.
                   I was contributing to TransformerLab up until I got an interview with Amazon.
-                  Since then, I've shifted my focus to the financial markets and poker. My plan forward is to
+                  Since then, I've shifted my focus to the trading and poker. My plan forward is to
                   continue learning about options, explore new opportunities, and test hypotheses. 
-                  I will also use my unemployed time and $25,000 AWS credits to apply ML to trading or a product/service
-                  of substance to others.
+                  I also have $25,000 of AWS credit, so if you have an idea, let me know!
                 </div>
               </div>
               
