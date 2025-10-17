@@ -47,4 +47,4 @@ Here is the article of the claim: [https://investorplace.com/smartmoney/2025/10/
 
 ---</s>
 
-EDIT: I  realized assumptions for the model were violated. The underlying data are time series. OLS assumes independent residuals (no autocorrelation). Times series are autocorrelated by definition. Gotta start over!
+EDIT: I  realized assumptions for the model were violated. The underlying data are time series. OLS assumes independent residuals (no autocorrelation). Times series are autocorrelated by definition. Gotta start over! The plan is to look into ML models.
