@@ -25,7 +25,7 @@ $$
 
 The model is as follows.
 
-![Screenshot of the model](../public/SI-SGR/futures.png)
+![Screenshot of the model](/SI-SGR/futures.png)
 
 &nbsp;
 
@@ -33,7 +33,7 @@ The model is as follows.
 
 What about SGR and silver spot prices? That model is as follows.
 
-![Screenshot of the model](../public/SI-SGR/spot.png)
+![Screenshot of the model](/SI-SGR/spot.png)
 
 &nbsp;
 
