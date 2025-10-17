@@ -25,7 +25,7 @@ Here are a few things I learned in no particular order:
 &nbsp;
 
 --- Understand the theory first. I thought scanning a book about options pricing and understanding the high-level was enough. It wasn't.
-A real hedge is more aligned with buying/selling delta-neutral options with the same underlying and same expiry.
+A real delta hedge is more aligned with buying/selling delta-neutral options with the same underlying and same expiry.
 
 &nbsp;
 
