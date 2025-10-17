@@ -7,11 +7,25 @@ import { Calendar } from 'lucide-react';
 import fm from 'front-matter';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 // Optionally: import ReactMarkdown from 'react-markdown';
 
 const BlogPost = () => {
+  type Post = {
+    title?: string;
+    excerpt?: string;
+    description?: string;
+    author?: string;
+    date?: string;
+    category?: string;
+    tags?: string[] | string;
+    image?: string;
+    content: string;
+  } | null;
+
   const { slug } = useParams();
-  const [post, setPost] = useState<any>(null);
+  const [post, setPost] = useState<Post>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -63,7 +77,7 @@ const BlogPost = () => {
             </CardHeader>
             <CardContent>
               <div className="prose max-w-none">
-                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeRaw, rehypeKatex]}>
                   {post.content}
                 </ReactMarkdown>
               </div>

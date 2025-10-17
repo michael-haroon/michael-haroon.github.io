@@ -3,7 +3,7 @@ title: "Trusting trust"
 excerpt: "An interesting read. Trusting code that only you wrote, which is practically none."
 author: "Michael Haroon"
 date: "2025-07-22"
-category: "career"
+category: "swe"
 tags:
 image: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Ken_Thompson%2C_2019.jpg"
 ---
