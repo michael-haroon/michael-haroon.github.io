@@ -25,7 +25,7 @@ $$
 
 The model is as follows.
 
-![Screenshot of the model](/SI-SGR/futures.png)
+![Screenshot of the model](futures.png)
 
 &nbsp;
 
@@ -33,11 +33,11 @@ The model is as follows.
 
 What about SGR and silver spot prices? That model is as follows.
 
-![Screenshot of the model](/SI-SGR/spot.png)
+![Screenshot of the model](/spot.png)
 
 &nbsp;
 
-Here is my source code with more details of the analysis: [https://github.com/michael-haroon/trading/blob/main/silver-SGR.ipynb](https://investorplace.com/smartmoney/2025/10/the-great-silver-shortage-why-prices-are-poised-to-break-out-again/)
+Here is my source code with more details of the analysis: [https://github.com/michael-haroon/trading/blob/main/silver-SGR.ipynb](https://github.com/michael-haroon/trading/blob/main/silver-SGR.ipynb)
 
 &nbsp;
 
