@@ -89,8 +89,8 @@ const Blog = () => {
   });
 
   const careerSections: { key: string; title: string }[] = [
-    { key: 'swe', title: 'SWE' },
     { key: 'trading', title: 'Trading' },
+    { key: 'swe', title: 'SWE' },
     { key: 'cybersecurity', title: 'Cybersecurity' },
   ];
 
