@@ -1,6 +1,6 @@
 ---
 title: "Analysis of future and spot prices of silver related to silver-gold ratio"
-excerpt: "There is no strong relation."
+excerpt: "My first attempt."
 author: "Michael Haroon"
 date: "2025-10-16"
 category: "trading"
