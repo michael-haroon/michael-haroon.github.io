@@ -5,7 +5,7 @@ author: "Michael Haroon"
 date: "2025-11-07"
 category: "movements"
 tags: ""
-image: "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2199670255.jpg?c=original"
+image: ""
 ---
 I just want to lay my predictions flat for people to see.
 
