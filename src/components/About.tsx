@@ -45,7 +45,7 @@ const About = () => {
                   <Badge variant="secondary">2024</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground">My background focused on the core of algebra, analysis,
-                  statistics, probability, and nonlinear optimization, and discrete optimization. I did terrible.
+                  statistics, probability, and nonlinear optimization, and discrete optimization.
                   I was a also a research assistant, lab mentor, and IT technician.</p>
 
               </div>
