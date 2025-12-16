@@ -83,21 +83,18 @@ const About = () => {
               </div> */}
               
               <div>
-                <h3 className="font-semibold mb-2">Areas of Interest</h3>
+                <h3 className="font-semibold mb-2">Recent Interests and Activities</h3>
                 <div className="flex flex-wrap gap-2">
-                  I am most interested in entrepernurship and trading. I was at Y Combinator's AI Start School.
-                  I was contributing to TransformerLab up until I got an interview with Amazon.
-                  Since then, I've shifted my focus to the trading and poker. My plan forward is to
-                  continue learning about options, explore new opportunities, and test hypotheses. 
-                  I also have $25,000 of AWS credit, so if you have an idea, let me know!
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold mb-2">Personal Interests</h3>
-                <div className="flex flex-wrap gap-2">
-                  <p>I have a dog that I dearly love. I am an avid gym goer and Olympic lifting hobbyist. And I love games.</p>
+                  <p>
+                    I am most interested in poker, entrepernurship, and trading. Poker taught me how to count,
+                    understand player behavior, model risk, and accept losses/sunken costs.
+                  </p>
+                  <p>I was at Y Combinator's AI Start School in Summer 2025.</p>
+                  <p>I have $25,000 of AWS credit, so if you have an idea, let me know.</p>
+                  <p>I have a dog that I dearly love. I am an avid gym goer and Olympic lifting hobbyist.</p>
                   <p>I also follow news on wealth inequality and economics.</p>
+
+
                 </div>
               </div>
             </CardContent>
