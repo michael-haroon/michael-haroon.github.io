@@ -26,13 +26,6 @@ const Header = () => {
               <Link to="/">Home</Link>
             </Button>
             <Button 
-              variant={isActive('/portfolio') ? "default" : "ghost"} 
-              size="sm" 
-              asChild
-            >
-              <Link to="/portfolio">Portfolio</Link>
-            </Button>
-            <Button 
               variant={isActive('/blog') ? "default" : "ghost"} 
               size="sm" 
               asChild
