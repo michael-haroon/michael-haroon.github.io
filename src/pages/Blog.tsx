@@ -40,7 +40,7 @@ const formatDate = (dateStr?: string): string => {
 
 const TABS: Tab[] = [
   { label: 'Career', value: 'career' },
-  { label: 'Socioeconomic changes', value: 'movements', subtitle: 'challenge the status quo to make our lives better' },
+  { label: 'Socioeconomic changes', value: 'movements', subtitle: 'Challenge the status quo to make our lives better' },
 ];
 
 const Blog = () => {
