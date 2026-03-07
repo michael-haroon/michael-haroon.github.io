@@ -83,7 +83,6 @@ const About = () => {
               </div> */}
               
               <div>
-                <h3 className="font-semibold mb-2">Interests and Activities</h3>
                 <div className="flex flex-wrap gap-2">
                   <p>
                     My interests tend to change but mostly cover entrepernurship, AI/ML, trading, engineering, and poker.
