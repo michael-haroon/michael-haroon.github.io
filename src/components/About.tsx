@@ -83,10 +83,13 @@ const About = () => {
               </div> */}
               
               <div>
-                <h3 className="font-semibold mb-2">Recent Interests and Activities</h3>
+                <h3 className="font-semibold mb-2">Interests and Activities</h3>
                 <div className="flex flex-wrap gap-2">
                   <p>
-                    I am most interested in poker, entrepernurship, and trading. Poker taught me how to count,
+                    My interests tend to change but mostly cover entrepernurship, AI/ML, trading, engineering, and poker.
+                  </p>
+                  <p>
+                    Poker taught me how to count,
                     understand player behavior, model risk, and accept losses/sunken costs.
                   </p>
                   <p>I was at Y Combinator's AI Start School in Summer 2025.</p>
