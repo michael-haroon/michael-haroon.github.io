@@ -91,8 +91,7 @@ const About = () => {
                     Poker taught me how to count,
                     understand player behavior, model risk, and accept losses/sunken costs.
                   </p>
-                  <p>I was at Y Combinator's AI Start School in Summer 2025.</p>
-                  <p>I have $25,000 of AWS credit, so if you have an idea, let me know.</p>
+                  <p>I was at Y Combinator's AI Start School in Summer 2025. I have $25,000 of AWS credit, so if you have an idea, let me know.</p>
                   <p>I have a dog that I dearly love. I am an avid gym goer and Olympic lifting hobbyist.</p>
                   <p>I also follow news on wealth inequality and economics.</p>
 
