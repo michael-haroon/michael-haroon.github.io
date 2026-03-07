@@ -61,7 +61,7 @@ const About = () => {
                 <p className="text-sm text-muted-foreground">
                   I was a declared physics major despite never having taken a physics course. Most of my courses were humanities.
                   I was a tutor and student rep on a hiring committee. I was recognized as one of the best math students for the year 2020-2021, 
-                  and I was commended for my skills, contributions, and performance.
+                  and I was commended for my skills, contributions, and performance on the hiring committee.
                 </p>
               </div>
             </CardContent>
