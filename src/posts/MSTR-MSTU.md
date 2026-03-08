@@ -11,5 +11,5 @@ image: "https://static.stocktitan.net/company-logo/mstr-lg.webp"
 Key finding is that YFinance data made it look EXTREMELY profitble, but with real quotes, borrowing cost, and the wide bid-ask spread of MSTU, it was barely making returns on $1000 capital. Here is my analysis:
 
 &nbsp;
-<a href="https://net-mortgage.vercel.app
+<a href="https://github.com/michael-haroon/MSTR-MSTU-tracking-error-analysis
 " style="color:blue">https://github.com/michael-haroon/MSTR-MSTU-tracking-error-analysis</a>
