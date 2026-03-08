@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight, Pin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import fm from 'front-matter';
 import { Link } from 'react-router-dom';
@@ -17,6 +17,7 @@ type Post = {
   category?: string;
   tags?: string[] | string;
   image?: string;
+  pinned?: boolean;
   content: string;
   slug: string;
 };
@@ -50,17 +51,7 @@ const Blog = () => {
 
   useEffect(() => {
     // Dynamically import all markdown files in src/posts
-    const postFiles = import.meta.glob('../posts/*.md', { eager: true, query: '?raw', import: 'default' });
-    const loadedPosts: Post[] = Object.entries(postFiles).map(([filePath, fileContent]) => {
-      const parsed = fm(fileContent as string);
-      const data = parsed.attributes as Record<string, unknown>;
-      return {
-        ...(data as Partial<Post>),
-        content: parsed.body,
-        slug: filePath.split('/').pop()!.replace('.md', ''),
-      };
-    });
-    // Sort by date descending (handle missing/invalid dates safely)
+    const postFiles = import.meta.glob('../posts/*.md', { query: '?raw', import: 'default' });
     const parseDate = (dateStr?: string) => {
       if (!dateStr || typeof dateStr !== 'string') return new Date(0);
       const parts = dateStr.split('-');
@@ -72,9 +63,22 @@ const Blog = () => {
       if (Number.isNaN(yi) || Number.isNaN(mi) || Number.isNaN(di)) return new Date(0);
       return new Date(yi, mi - 1, di);
     };
-    loadedPosts.sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
-    setPosts(loadedPosts);
-    setLoading(false);
+    Promise.all(
+      Object.entries(postFiles).map(async ([filePath, loader]) => {
+        const fileContent = await (loader as () => Promise<string>)();
+        const parsed = fm(fileContent);
+        const data = parsed.attributes as Record<string, unknown>;
+        return {
+          ...(data as Partial<Post>),
+          content: parsed.body,
+          slug: filePath.split('/').pop()!.replace('.md', ''),
+        } as Post;
+      })
+    ).then((loadedPosts) => {
+      loadedPosts.sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
+      setPosts(loadedPosts);
+      setLoading(false);
+    });
   }, []);
 
   // For the Career tab, we further group by subcategories (SWE, trading, cybersecurity)
@@ -87,6 +91,8 @@ const Blog = () => {
     }
     return post.category === selectedTab;
   });
+
+  const pinnedPosts = filteredPosts.filter(p => p.pinned === true);
 
   const careerSections: { key: string; title: string }[] = [
     { key: 'trading', title: 'Trading' },
@@ -138,6 +144,74 @@ const Blog = () => {
             <>
               {isCareer ? (
                 <div className="space-y-12">
+                  {/* Featured / Pinned Posts */}
+                  {pinnedPosts.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-6">
+                        <Pin className="h-5 w-5 text-primary" />
+                        <h2 className="text-2xl font-semibold">Featured</h2>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {pinnedPosts.map((post) => (
+                          <Card key={post.slug} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-2 border-primary/40 bg-primary/5 relative">
+                            <div className="absolute top-3 right-3 z-10">
+                              <Badge className="bg-primary text-primary-foreground text-xs flex items-center gap-1 shadow">
+                                <Pin className="h-3 w-3" /> Pinned
+                              </Badge>
+                            </div>
+                            <div className="aspect-video overflow-hidden">
+                              <img
+                                src={post.image}
+                                alt={post.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                            <CardHeader className="pb-4">
+                              <div className="flex items-center gap-2 mb-2">
+                                <Badge variant="secondary" className="text-xs">
+                                  {post.category ? post.category.charAt(0).toUpperCase() + post.category.slice(1) : ''}
+                                </Badge>
+                                <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                  <Calendar className="h-3 w-3" />
+                                  {formatDate(post.date)}
+                                </div>
+                              </div>
+                              <CardTitle className="text-lg line-clamp-2 group-hover:text-primary transition-colors">
+                                {post.title}
+                              </CardTitle>
+                              <CardDescription className="line-clamp-3">
+                                {post.excerpt || post.description}
+                              </CardDescription>
+                            </CardHeader>
+                            <CardContent className="pt-0">
+                              <div className="flex items-center justify-end">
+                                <Button variant="ghost" size="sm" className="group-hover:text-primary" asChild>
+                                  <Link to={`/blog/${post.slug}`}>
+                                    Read More
+                                    <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                                  </Link>
+                                </Button>
+                              </div>
+                              <div className="flex flex-wrap gap-1 mt-3">
+                                {post.tags && (Array.isArray(post.tags) ? post.tags : [post.tags])
+                                  .slice(0, 2)
+                                  .map((tag) => (
+                                    <Badge
+                                      key={tag}
+                                      variant={tag === 'About Me' ? 'default' : 'outline'}
+                                      className={`text-xs ${tag === 'About Me' ? 'bg-purple-600 hover:bg-purple-700 text-white' : ''}`}
+                                    >
+                                      {tag}
+                                    </Badge>
+                                  ))}
+                              </div>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {careerSections.map(section => {
                     const sectionPosts = filteredPosts.filter(p => String(p.category || '').toLowerCase() === section.key);
                     if (sectionPosts.length === 0) return null;
