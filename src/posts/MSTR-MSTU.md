@@ -3,7 +3,7 @@ title: "MSTR-MSTU paired strategy analysis"
 excerpt: "Pairs trading is famous but crowded. It's not as profitble as a savings account. I did the analysis rigorously on this pair, and tried on NVDA-NVDL but it did not look promising."
 author: "Michael Haroon"
 date: "2026-03-07"
-category: "swe"
+category: "trading"
 tags: ""
 pinned: true
 image: "https://static.stocktitan.net/company-logo/mstr-lg.webp"
