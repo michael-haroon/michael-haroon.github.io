@@ -17,7 +17,7 @@ const Hero = () => {
             <a href="#about">About Me</a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="mailto:mrharoon@berkeley.edu">Contact Me</a>
+            <a href="mailto:michaelharoon@messymachine.edu">Contact Me</a>
           </Button>
         </div>
         <div className="flex justify-center gap-4 mt-6 animate-fade-in">
