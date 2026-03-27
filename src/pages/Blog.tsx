@@ -40,12 +40,12 @@ const formatDate = (dateStr?: string): string => {
 };
 
 const TABS: Tab[] = [
-  { label: 'Career', value: 'career' },
+  { label: 'Hobbies', value: 'hobby' },
   { label: 'Socioeconomic changes', value: 'movements', subtitle: 'Challenge the status quo to make our lives better' },
 ];
 
 const Blog = () => {
-  const [selectedTab, setSelectedTab] = useState('career');
+  const [selectedTab, setSelectedTab] = useState('hobby');
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -81,20 +81,20 @@ const Blog = () => {
     });
   }, []);
 
-  // For the Career tab, we further group by subcategories (SWE, trading, cybersecurity)
-  const isCareer = selectedTab === 'career';
+  // For the Hobbies tab, we further group by subcategories (SWE, trading, cybersecurity)
+  const isHobby = selectedTab === 'hobby';
   const filteredPosts = posts.filter(post => {
-    if (isCareer) {
-      // Accept career subcategories
+    if (isHobby) {
+      // Accept hobby subcategories
       const value = String(post.category || '').toLowerCase();
-      return value === 'swe' || value === 'trading' || value === 'cybersecurity' || value === 'career';
+      return value === 'swe' || value === 'trading' || value === 'cybersecurity' || value === 'hobby';
     }
     return post.category === selectedTab;
   });
 
   const pinnedPosts = filteredPosts.filter(p => p.pinned === true);
 
-  const careerSections: { key: string; title: string }[] = [
+  const hobbySections: { key: string; title: string }[] = [
     { key: 'trading', title: 'Trading' },
     { key: 'swe', title: 'SWE' },
     { key: 'cybersecurity', title: 'Cybersecurity' },
@@ -142,7 +142,7 @@ const Blog = () => {
             </div>
           ) : (
             <>
-              {isCareer ? (
+              {isHobby ? (
                 <div className="space-y-12">
                   {/* Featured / Pinned Posts */}
                   {pinnedPosts.length > 0 && (
@@ -212,7 +212,7 @@ const Blog = () => {
                     </div>
                   )}
 
-                  {careerSections.map(section => {
+                  {hobbySections.map(section => {
                     const sectionPosts = filteredPosts.filter(p => String(p.category || '').toLowerCase() === section.key);
                     if (sectionPosts.length === 0) return null;
                     return (
